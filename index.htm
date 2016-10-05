@@ -3,8 +3,12 @@
 <head>
 <title>翁天信 · Dandy Weng</title>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
 <link rel="stylesheet" href="main.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" media="screen" href="mobile-patch.css" />
+
 <style id="inline-style-section">
 /*section {height:500px;}*/
 </style>
@@ -470,7 +474,6 @@ animation-name:rotate_circle; animation-iteration-count:infinite; animation-dura
 		<script>
 			mapop = new newMapOperator(document.getElementById('map'));
 		</script>
-        <a id="mjkjz"><i class="fa fa-ambulance"></i> 密集恐惧症重度患者<del>救命</del>专用按钮</a>
 		<div class="clear"></div>
         <p class="angle white"><a href="#photo" class="fa fa-angle-down"></a></p>
     </section>
@@ -670,14 +673,10 @@ animation-name:rotate_circle; animation-iteration-count:infinite; animation-dura
 			<div class="container">    
 				<form id="form" action="#">
 					<p class="tips">谢绝任何形式的商业性摄影、设计或 Web 开发等相关工作的邀请，与费用无关，望理解。</p>
-					<div class="input-border" style="width:50%;"><input type="text" name="author" placeholder="称呼"></div>
+					<div class="input-border two-col" style=""><input type="text" name="author" placeholder="称呼"></div>
 					<div class="input-border"><textarea name="comment" rows="5" placeholder="留言内容"></textarea></div>
-					<table style="width:100%;">
-					<tr>
-						<td><div class="input-border" style="width:100%;display:block;box-sizing:border-box;"><input type="text" name="email" placeholder="邮箱" style="width:auto;"></div></td>
-						<td><div class="input-border" style="width:100%;display:block;box-sizing:border-box;"><input type="text" name="url" placeholder="主页" style="width:auto;"></div></td>
-					</tr>
-					</table>
+					<div class="input-border two-col" style=""><input type="text" name="email" placeholder="邮箱" style="width:auto;"></div>
+					<div class="input-border two-col" style=""><input type="text" name="url" placeholder="主页" style="width:auto;"></div>
 					<p class="tips">留言会在经过防广告审核后在我博客的留言板中公开显示<br>填写邮箱后,当该评论被回复时将收到邮件通知</p>
 					<p style="text-align:center;"><button class="submit" type="submit"><i class="fa fa-envelope"></i>&nbsp;&nbsp;保存留言</button></p>
 				</form>
