@@ -83,7 +83,7 @@
 
 @media (min-width:700px){
 #school {}
-	#school .timeline{position:absolute; top:0; left:3%; height:100%; width:30%; z-index:0;transition:0.2s all;}
+	#school .timeline{position:absolute; top:0; left:3%; height:100%; width:30%; z-index:1;transition:0.2s all;}
 	#school .content {float:right; width:60%; margin:0 10px; padding:20px;}	
 
 #travel {}
@@ -92,9 +92,9 @@
 
 
 #photo {}
-	#photo .content {padding:10px 0 10px 0; }
+	#photo .content {padding:2em 0 10px 0; }
 	#lightbox  {width:80%; }
-	#photo .btn-bar {text-align:center; margin:2em 0;}
+	#photo .btn-bar {text-align:center; margin:1.5em 0 1em 0;}
 	#photo .btn-bar a {display:inline-block; padding:.4em 1em;}
 
 #design {}

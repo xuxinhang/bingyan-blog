@@ -174,3 +174,77 @@ avatarOp = {
 		avatarOp.setScale('static');
 	});
 })();
+
+
+function smoothScroll(top,time,fps){
+	window.whenScrolling =true;
+
+	var d = new Date();
+	console.log(d.getTime()/1000);
+	var time = (time>0 && time!==undefined)?time:3;
+	console.log(time);
+	var currentPos = window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop;
+	/*if(fps===undefined || fps<=0){
+		fps=100;
+	}else{
+		fps = parseInt(fps);
+	}
+	var spf = 1/fps;
+	var fnum = time*fps;
+	var distancePer = (top-currentPos)/fnum;
+	var deepScroll = function(from,dest,redo){
+		if(redo>1){
+			window.setTimeout(function(){deepScroll(from+dest,dest,redo-1)},spf*1000);
+		}else{
+			var d = new Date();
+			console.log(d.getTime()/1000);
+			return true;
+		}
+		window.scrollTo(0,from+dest);
+
+	}
+	deepScroll(currentPos,distancePer,fnum);
+	*/
+
+	speed = (top-currentPos)/(time*100);
+	var t = window.setInterval(function(){
+		if(Math.abs(top - (window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop))<Math.abs(speed)){
+			window.whenScrolling =false;
+			document.body.onscroll();
+			window.clearInterval(t);
+		}else{
+			window.scrollBy(0,speed);
+		}
+	},10);
+
+}
+
+function startRocket(){
+	var aniEle = document.getElementById('rocket-animation');
+	aniEle.style.visibility = 'visible'; aniEle.className = ''; 
+
+	var rocketEle = document.getElementById('float-rocket');
+	var toTopEle = document.getElementById('rocket-top');
+	rocketEle.style.top = st+'px';
+	//rocketEle.style.left = toTopEle.offestLeft;
+	var st = toTopEle.getBoundingClientRect().top;
+	var r = window.setInterval(function(){
+		if(window.whenScrolling == false){
+			window.clearInterval(r);
+			aniEle.className = 'rocket-hidden'; 
+			window.setTimeout(function(){ aniEle.style.visibility = 'hidden'; },1000); 
+		}else{
+			rocketEle.style.top = (st*(window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop)/document.body.clientHeight) + 'px';
+			//console.log(rocketEle.style.top,st);
+		}
+	},1);
+	
+	smoothScroll(0,2);
+}
+
+function smoothTo(id){
+	var el = document.getElementById(id);
+	if(el){
+		smoothScroll(el.offsetTop,0.5);
+	}
+}

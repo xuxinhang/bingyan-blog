@@ -23,8 +23,9 @@ function newMapOperator(o){
 			tar = e.target;//console.log(e);
 			py =  e.clientY + (window.pageYOffset || document.body.scrollTop);
 			px =  e.clientX + (window.pageXOffset || document.body.scrollLeft);
-
-			ot.showTip(this.className.baseVal,px,py);
+			
+			var noteText = this.getAttribute('data-note')?this.getAttribute('data-note'):this.className.baseVal;
+			ot.showTip(noteText,px,py);
 		}
 	}
 

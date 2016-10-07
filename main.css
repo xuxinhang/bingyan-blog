@@ -64,7 +64,7 @@ h3 {font-size:3em;}
 
 #school {padding-bottom:10em; overflow:hidden;background-image: linear-gradient(to bottom,rgba(255, 128, 80,0.2),transparent),url(img/school-blur.jpg); background-position:center center;	background-size:cover; background-repeat:no-repeat; background-attachment:fixed; border-top:rgba(192,192,192,0.3) 1px solid;}
 	/*#school:before {content:''; position:absolute; top:0; left:0; right:0; bottom:0; background:#996600; opacity:0.3;}*/
-	#school .timeline{ opacity:0.5; transition:0.2s all;}
+	#school .timeline{ opacity:0.5; transition:0.2s all; z-index:1;}
 		#school .timeline:hover{opacity:1;}
 	#school .content { margin:0 10px; padding:20px;}	
 	#school h2,#school p{text-shadow: #666 1px 1px 3px; color:#FFF;}
@@ -105,18 +105,18 @@ h3 {font-size:3em;}
 
 
 #photo {background:linear-gradient(to bottom,#ECECEC 0%,#FCFCFC 20%) #ECECEC; padding-bottom:5em;}
-	#photo .content {padding:40px 0 10px 0; }
+	#photo .content {padding:2em 0 10px 0; }
 	#photo h2{ color:#333; text-align:center; }
 	#photo p { color:#333; text-align:center; }
 
 	#lightbox  {width:80%; margin:2.4em auto 0 auto; text-align:center;}
-	.lightgrid {display:inline-block; position:relative; width:10em; margin:.1em; padding:0; vertical-align:top;}
+	.lightgrid {display:inline-block; position:relative; width:10em; margin:.1em; padding:0; vertical-align:top; overflow:hidden;}
 	.lightgrid img {width:100%; margin:0;}
-	.lightgrid .pic-note {position:absolute; width:100%; height:100%; top:0; left:0; box-sizing:border-box; margin:0; padding:10px; background:rgba(0,0,0,0.5); color:#FFF; visibility:hidden; z-index:9; overflow:hidden;}
-	.lightgrid .pic-note em {display:block; font-style:normal; font-size:130%; }
-	.lightgrid:hover .pic-note {visibility:visible;}
+	.lightgrid .pic-note {position:absolute; box-sizing:border-box; height:100%; top:0; left:-10px; right:0; box-sizing:border-box; margin:0; padding:10px; background:rgba(0,0,0,0.5); color:#FFF; font-size:0.6em; z-index:9; overflow:hidden; opacity:0; transition:0.5s all;}
+	.lightgrid .pic-note em {display:block; font-style:normal; font-size:130%; } 
+	.lightgrid:hover .pic-note {left:0; padding-right:0; opacity:1; }
 
-	#photo .btn-bar {text-align:center; margin:2em 0;}
+	#photo .btn-bar {text-align:center; margin:1.5em 0 1em 0;}
 		#photo .btn-bar a {padding:.4em 1em; color:#666; text-decoration:none; vertical-align:middle;}
 		#photo .btn-bar i {display:inline-block; padding:5px; width:1.4em; line-height:1.4em; border-radius:50%; border:2px solid; }
 
@@ -126,12 +126,14 @@ h3 {font-size:3em;}
 #design { padding:2em 0; padding-bottom:5em;background: url(img/design.jpg) center center fixed; background-size:cover; box-shadow:0 0 20px #000 inset;}
 	#showcase {text-align:center;}
 	.showgrid {display:inline-block; position:relative; width:40%; min-width:12em; margin:2% 2%; padding:0; vertical-align:top;}
-	.showgrid img {width:100%; margin:0;}
-	.showgrid .pic-note {position:absolute; width:100%; box-sizing:border-box; margin:0; padding:10px; background:rgba(0,0,0,0.5); color:#FFF; visibility:hidden; z-index:9;}
-	.showgrid .pic-note em {display:block; text-align:center; font-style:normal; font-size:130%; }
-	.showgrid:hover .pic-note {visibility:visible;}
-	.showgrid .pic-note.bottom { top:100%;}
-	.showgrid .pic-note.top { bottom:100%;}
+	.showgrid img {width:100%; margin:0; outline:3px #fff solid; box-shadow:2px 2px 5px rgba(0,0,0,0.5);}
+	.showgrid .pic-note {position:absolute; width:100%; box-sizing:border-box; margin:0; padding:10px; background:rgba(0,0,0,0.5); color:#FFF; border-radius:0.8em; border:#fff 1px solid; z-index:9; overflow:hidden; font-size:0.7em; max-height:100%; transition:all 1s;}
+	.showgrid .pic-note em {display:block; text-align:center; font-style:normal; font-size:130%;}
+	.showgrid:hover .pic-note {max-height:900px;}
+	.showgrid .pic-note.bottom {top:0; opacity:0; border-radius:0 0 5px 5px;}
+	.showgrid:hover .pic-note.bottom {top:100%; opacity:1;}
+	.showgrid .pic-note.top {bottom:0; opacity:0; border-radius:5px 5px 0 0;}
+	.showgrid:hover .pic-note.top {bottom:100%; opacity:1;}
 
 	#design .content {padding:0; text-shadow: #666 1px 1px 3px;}
 	#design .content h2{ color:#fff; text-align:left; padding:0 ;}
@@ -187,7 +189,7 @@ h3 {font-size:3em;}
 
 
 
-#footer {height:auto; background:rgb(51,51,51); padding-top:2em; color:#A3A6A8; font-size:.8em;}
+#footer {height:auto; background:#34393E; padding-top:2em; color:#A3A6A8; font-size:.8em;}
 	#footer a {color:#A3A6A8; text-decoration:none; transition:all 0.5s}
 	#footer a:hover {color:#fff;}
 	.row-one {padding:20px 0; text-align:center;}
@@ -199,6 +201,15 @@ h3 {font-size:3em;}
 		.learn-more h3 {font-size:larger; margin-bottom:0.5em;}
 
 	.row-two {padding:20px 0; text-align:center;}
+
+	.with-tip {position:relative;}
+	.with-tip:before {content:attr(data-tip); display:block; width:10em; position:absolute; left:50%; bottom:0; padding:5px; background:#333; color:#FFF; border-radius:6px; opacity:0; transition:all 0.5s;}
+	.with-tip:hover:before {opacity:1;  bottom:100%;}
+
+	#rocket-top { width:3em; height:3em; margin:1.2em auto; background:rgba(255, 255, 255, 0.1); border-radius:50%; box-shadow:0 0 1em rgba(0,0,0,0.2); transition:all 0.5s;}
+		#rocket-top svg {width:100%; height:100%; box-sizing:border-box; padding:0.6em; fill:#ccc;}
+	#rocket-top:hover {background:rgba(255, 255, 255, 0.8);}
+		#rocket-top:hover svg {fill:#666;}
 
 
 
@@ -256,6 +267,19 @@ h3 {font-size:3em;}
 
 #mouseEcho {position:absolute; top:0; left:0; right:0; bottom:0; background:transparent; z-index:2;}
 
+/* float rocket */
+#float-rocket {position:fixed; left:50%; width:2em; height:3em; margin-left:-1em; transition:opacity 1s; opacity:1; z-index:99;}
+#float-rocket svg {width:100%; height:100%;  }
+
+#rocket-animation { transition:all 1s; }
+#rocket-animation .blur-bg { transition:all 1s; opacity:1;}
+
+#rocket-animation.rocket-hidden .blur-bg {opacity:0;}
+#rocket-animation.rocket-hidden #float-rocket {opacity:0;}
+
+
+
+
 /** Animation **/
 
 
@@ -263,6 +287,12 @@ h3 {font-size:3em;}
 #travel .content, #travel figure { transition:all 1s; }
 	#travel.anbe .content{margin-left:-20%;  opacity:0.2;}
 	#travel.anbe  figure {margin-right:-20%; opacity:0.2;}
+
+#photo {}
+	#photo .lightgrid {transition:1s all;}
+	#photo.anbe .lightgrid {transform:rotateY(90deg); opacity:0;}
+	#photo.anaf .lightgrid {transform:rotateY(0deg);  opacity:1;}
+
 
 #design h2, #design .content p, #design .tips, #design .showgrid {transition:all 1s; position:relative;}
 	#design.anbe h2 {left:50%; opacity:0.3;}
@@ -293,11 +323,6 @@ h3 {font-size:3em;}
 
 #mail .content {transition:all 1s; position:relative; top:0;}
 	#mail.anbe .content {top:10em; opacity:0.5;}
-
-
-
-
-
 
 
 .ande-1 {transition-delay:15s;}
