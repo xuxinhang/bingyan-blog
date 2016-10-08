@@ -179,10 +179,10 @@ avatarOp = {
 function smoothScroll(top,time,fps){
 	window.whenScrolling =true;
 
-	var d = new Date();
-	console.log(d.getTime()/1000);
+	//var d = new Date();
+	//console.log(d.getTime()/1000);
 	var time = (time>0 && time!==undefined)?time:3;
-	console.log(time);
+	//console.log(time);
 	var currentPos = window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop;
 	/*if(fps===undefined || fps<=0){
 		fps=100;
