@@ -36,7 +36,7 @@ animation-name:rotate_circle; animation-iteration-count:infinite; animation-dura
 
 
 </head>
-<body class="initializing" onresize="data-notements()" onscroll="if(!window.whenScrolling) scrollElements()" onload="	document.getElementById('loading').style.visibility = 'hidden';">
+<body class="initializing" onresize="resizeElements()" onscroll="if(!window.whenScrolling) scrollElements()" onload="	document.getElementById('loading').style.visibility = 'hidden';">
     <!-- Intro -->
     <section id="intro" class="conta animation anbe">
         <div class="content">
@@ -486,57 +486,43 @@ animation-name:rotate_circle; animation-iteration-count:infinite; animation-dura
 			<p>我爱摄影，尤其是壮美的自然风光。<br>
 			因为旅行，我爱上了摄影；因为摄影，我更热爱旅行。</p>
 			<div id="lightbox">
-
-				<div class="lightgrid" data-index="0" data-preview="full/a.jpg" style="transition-delay:0;">
-					<img src="thumb/2012.jpg" alt="2012 版页面截图"/>
-					<div class="pic-note">
-						采用模块化、响应式设计，应用了一些 CSS 动画。<em>2012</em>
-					</div>
-				</div>
-				<div class="lightgrid" data-index="1" data-preview="full/b.jpg" style="transition-delay:0.1s;">
-					<img src="thumb/2011.jpg" alt="2011 版页面截图" />
+				<div class="lightgrid" data-index="0" data-preview="full/a.jpg" style="transition-delay:0;"><img src="thumb/2012.jpg" alt="2012 版页面截图"/><div class="pic-note">采用模块化、响应式设计，应用了一些 CSS 动画。<em>2012</em></div></div><!--
+				--><div class="lightgrid" data-index="1" data-preview="full/b.jpg" style="transition-delay:0.1s;"><img src="thumb/2011.jpg" alt="2011 版页面截图" />
 					<div class="pic-note">
 						首个 HTML5 网页，开始应用少量 CSS 3 特性。<em>2011</em>
 					</div>
-				</div>
-				<div class="lightgrid" data-index="2" data-preview="http://www.istartedsomething.com/bingimages/cache/CliffDwelling_EN-US12541246857_1366x768.jpg" style="transition-delay:0.2s;">
-					<img src="thumb/2010.jpg" alt="2010 版页面截图" />
+				</div><!--
+				--><div class="lightgrid" data-index="2" data-preview="http://www.istartedsomething.com/bingimages/cache/CliffDwelling_EN-US12541246857_1366x768.jpg" style="transition-delay:0.2s;"><img src="thumb/2010.jpg" alt="2010 版页面截图" />
 					<div class="pic-note">
 						我的第一个网站，呵呵。<em>2010</em>
 					</div>
-				</div>
-				<div class="lightgrid" data-index="3" data-preview="google.com" style="transition-delay:0.3s;">
-					<img src="thumb/2012.jpg" alt="2012 版页面截图" />
+				</div><!--
+				--><div class="lightgrid" data-index="3" data-preview="google.com" style="transition-delay:0.3s;"><img src="thumb/2012.jpg" alt="2012 版页面截图" />
 					<div class="pic-note top">
 						采用模块化、响应式设计，应用了一些 CSS 动画。<em>2012</em>
 					</div>
-				</div>
-				<div class="lightgrid" data-index="4" data-preview="full/j.jpg" style="transition-delay:0.4s;">
-					<img src="thumb/2011.jpg" alt="2011 版页面截图" />
+				</div><!--
+				--><div class="lightgrid" data-index="4" data-preview="full/j.jpg" style="transition-delay:0.4s;"><img src="thumb/2011.jpg" alt="2011 版页面截图" />
 					<div class="pic-note bottom">
 						首个 HTML5 网页，开始应用少量 CSS 3 特性。<em>2011</em>
 					</div>
-				</div>
-				<div class="lightgrid" data-index="5" data-preview="full/f.jpg" style="transition-delay:0.5s;">
-					<img src="thumb/2010.jpg" alt="2010 版页面截图" />
+				</div><!--
+				--><div class="lightgrid" data-index="5" data-preview="full/f.jpg" style="transition-delay:0.5s;"><img src="thumb/2010.jpg" alt="2010 版页面截图" />
 					<div class="pic-note bottom">
 					我的第一个网站，呵呵。<em>2010</em>
 					</div>
-				</div>
-				<div class="lightgrid" data-index="6" data-preview="full/g.jpg" style="transition-delay:0.6s;">
-					<img src="thumb/2012.jpg" alt="2012 版页面截图" />
+				</div><!--
+				--><div class="lightgrid" data-index="6" data-preview="full/g.jpg" style="transition-delay:0.6s;"><img src="thumb/2012.jpg" alt="2012 版页面截图" />
 					<div class="pic-note top">
 						采用模块化、响应式设计，应用了一些 CSS 动画。<em>2012</em>
 					</div>
-				</div>
-				<div class="lightgrid" data-index="7" data-preview="full/c.jpg" style="transition-delay:0.7s;">
-					<img src="thumb/2011.jpg" alt="2011 版页面截图" />
+				</div><!--
+				--><div class="lightgrid" data-index="7" data-preview="full/c.jpg" style="transition-delay:0.7s;"><img src="thumb/2011.jpg" alt="2011 版页面截图" />
 					<div class="pic-note bottom">
 						首个 HTML5 网页，开始应用少量 CSS 3 特性。<em>2011</em>
 					</div>
-				</div>
-				<div class="lightgrid" data-index="8" data-preview="full/b.jpg" style="transition-delay:0.8s;">
-					<img src="thumb/2010.jpg" alt="2010 版页面截图" />
+				</div><!--
+				--><div class="lightgrid" data-index="8" data-preview="full/b.jpg" style="transition-delay:0.8s;"><img src="thumb/2010.jpg" alt="2010 版页面截图" />
 					<div class="pic-note bottom">
 					我的第一个网站，呵呵。<em>2010</em>
 					</div>
@@ -784,7 +770,7 @@ function resizeElements(){
 	ss.innerHTML = "section.conta {min-height:"+ window.innerHeight +'px;} ';
 	ss.innerHTML+= '.timeline {height:'+ window.innerHeight +'px !important;}';
 	//alert(1);
-	ss.innerHTML+='#showarea {line-height:'+document.getElementById('showarea').clientHeight+'px;}';
+	ss.innerHTML+='#showarea {line-height:'+(document.getElementById('showarea').clientHeight-6)+'px;}';
 }
 
 function playAnimation(o){
